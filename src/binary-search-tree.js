@@ -107,32 +107,51 @@ class BinarySearchTree {
   min() {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
-    if (!this.broot) { return null }
-
-    while (this.broot.left) {
-      this.broot = this.broot.left
+    if (!this.broot) {
+      // console.log('no way');
+      return null
     }
-    return this.broot.left.data
+
+    // console.log('here??');
+    let point = this.broot
+
+    while (point.left) {
+      point = point.left
+    }
+
+    // console.log(point.data)
+    return point.data
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (!this.broot) {
+      // console.log('no way');
+      return null
+    }
+
+    // console.log('here??');
+    let point = this.broot
+
+    while (point.right) {
+      point = point.right
+    }
+
+    // console.log(point.data)
+    return point.data
   }
 }
 const myTree = new BinarySearchTree();
-myTree.add(2);
-myTree.add(7);
-myTree.add(1);
-myTree.add(8);
-myTree.add(4);
-myTree.add(32);
-myTree.add(12);
+myTree.add(9);
 myTree.add(14);
-
-myTree.find(7).data
-// myTree.find(1337).data
-myTree.find(32).data
+myTree.add(54);
+myTree.add(2);
+myTree.add(6);
+myTree.add(8);
+myTree.add(31);
+myTree.add(1);
+// myTree.remove(6);
+// myTree.remove(2);
+console.log(myTree.max());
 
 
 
