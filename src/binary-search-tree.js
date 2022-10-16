@@ -99,14 +99,58 @@ class BinarySearchTree {
 
   }
 
-  remove(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  remove(data) {
+    this.root = removePoint(this.broot, data);
+
+    function removePoint(point, data) {
+      if (!point) { return null }
+
+      if (data < point.data) {
+        point.left = removePoint(point.left, data)
+        // continue search
+        return point
+      }
+      else if (data > point.data) {
+        point.right = removePoint(point.right, data)
+        // continue search
+        return point
+      }
+      else {
+        if (!point.left && !point.right) {
+          return point = null
+        }
+
+       if (!point.left) {
+          point = point.right
+          return point
+
+        }
+        // пробовал через else if, но потом допер, что агаааа. оно может остановиться не там! Надо еще одно дерево написать бы. или 2? на работе займусь))
+        if (!point.right) {
+          point = point.left
+          return point
+        }
+        // если есть оба потомка. жоска. Ищем максимальный левый. Я так хочу!
+         
+          // ебать путаница.
+          let maxLeft = point.left
+          while (maxLeft.right) {
+            maxLeft = maxLeft.right
+          }
+          
+          point.data = maxLeft.data
+          point.left = removePoint(point.left, maxLeft.data)
+
+          return point
+        
+      }
+
+    }
+
   }
 
   min() {
-    // throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+
     if (!this.broot) {
       // console.log('no way');
       return null
