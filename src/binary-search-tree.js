@@ -120,7 +120,7 @@ class BinarySearchTree {
           return point = null
         }
 
-       if (!point.left) {
+        if (!point.left) {
           point = point.right
           return point
 
@@ -131,18 +131,18 @@ class BinarySearchTree {
           return point
         }
         // если есть оба потомка. жоска. Ищем максимальный левый. Я так хочу!
-         
-          // ебать путаница.
-          let maxLeft = point.left
-          while (maxLeft.right) {
-            maxLeft = maxLeft.right
-          }
-          
-          point.data = maxLeft.data
-          point.left = removePoint(point.left, maxLeft.data)
 
-          return point
-        
+        // ебать путаница.
+        let maxLeft = point.left
+        while (maxLeft.right) {
+          maxLeft = maxLeft.right
+        }
+
+        point.data = maxLeft.data
+        point.left = removePoint(point.left, maxLeft.data)
+
+        return point
+
       }
 
     }
@@ -185,17 +185,17 @@ class BinarySearchTree {
   }
 }
 const myTree = new BinarySearchTree();
-myTree.add(9);
-myTree.add(14);
-myTree.add(54);
-myTree.add(2);
-myTree.add(6);
-myTree.add(8);
-myTree.add(31);
-myTree.add(1);
+// myTree.add(9);
+// myTree.add(14);
+// myTree.add(54);
+// myTree.add(2);
+// myTree.add(6);
+// myTree.add(8);
+// myTree.add(31);
+// myTree.add(1);
 // myTree.remove(6);
 // myTree.remove(2);
-console.log(myTree.max());
+// console.log(myTree.max());
 
 
 
