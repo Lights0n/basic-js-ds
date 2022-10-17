@@ -110,12 +110,12 @@ class BinarySearchTree {
         // continue search
         return point
       }
-      else if (data > point.data) {
+      if (data > point.data) {
         point.right = removePoint(point.right, data)
         // continue search
         return point
       }
-      else {
+      {
         if (!point.left && !point.right) {
           return point = null
         }
@@ -185,17 +185,17 @@ class BinarySearchTree {
   }
 }
 const myTree = new BinarySearchTree();
-// myTree.add(9);
-// myTree.add(14);
-// myTree.add(54);
-// myTree.add(2);
-// myTree.add(6);
-// myTree.add(8);
-// myTree.add(31);
-// myTree.add(1);
+myTree.add(9);
+myTree.add(14);
+myTree.add(54);
+myTree.add(2);
+myTree.add(6);
+myTree.add(8);
+myTree.add(31);
+myTree.add(1);
 // myTree.remove(6);
 // myTree.remove(2);
-// console.log(myTree.max());
+console.log(myTree.max());
 
 
 
